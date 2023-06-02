@@ -1,0 +1,60 @@
+name: NoteApp
+
+configs:
+    Debug: debug
+    Release: Release
+    Staging: release
+    
+configFiles:
+    Debug: Sources/Configs/BuildConfigurations/Debug.xcconfig
+    Release: Sources/Configs/BuildConfigurations/Release.xcconfig
+    Staging: Sources/Configs/BuildConfigurations/Staging.xcconfig
+
+options:
+    createIntermediateGroups: true
+    groupSortPosition: top
+    generateEmptyDirectories: true
+    indentWidth: 4
+    tabWidth: 4
+    bundleIdPrefix: "com.thanhthan"
+    developmentLanguage: vn
+    
+settings:
+PRODUCT_BUNDLE_IDENTIFIER: $(PRODUCT_BUNDLE_IDENTIFIER)
+    
+targets: # The List of our targets
+  NoteApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "14.0"
+    sources:
+        - Sources
+        - path: R.generated.swift
+          optional: true
+    configFiles:
+        Debug: Sources/Configs/BuildConfigurations/Debug.xcconfig
+        Release: Sources/Configs/BuildConfigurations/Release.xcconfig
+        Staging: Sources/Configs/BuildConfigurations/Staging.xcconfig
+        
+    settings:
+        INFOPLIST_FILE: Sources/Resources/Info.plist
+        SWIFT_VERSION: "5.0"
+        CODE_SIGN_STYLE: "Manual"
+        TARGETED_DEVICE_FAMILY: 1
+    scheme:
+      environmentVariables:
+        ENABLE_SIGNPOST: YES
+    prebuildScripts:
+        - name: R.swift
+          script: |
+            if [ $ACTION != "indexbuild" ]; then
+              "$PODS_ROOT/R.swift/rswift" generate "$SRCROOT/R.generated.swift"
+            fi
+          inputFiles:
+            - $TEMP_DIR/rswift-lastrun
+          outputFiles:
+            - $SRCROOT/R.generated.swift
+    postBuildScripts:
+          inputFiles:
+            - ${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}
+            - $(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)
