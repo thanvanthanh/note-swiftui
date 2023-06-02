@@ -8,7 +8,7 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-#include "./Pods/Target Support Files/Pods-NoteApp/Pods-NoteApp.debug.xcconfig"
+#include "./Pods/Target Support Files/Pods-ios-noteapp/Pods-ios-noteapp.debug.xcconfig"
 
 APP_NAME = Note App (Debug)
 PRODUCT_BUNDLE_IDENTIFIER = com.thanhthan.lopia.debug

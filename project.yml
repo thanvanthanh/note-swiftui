@@ -1,4 +1,4 @@
-name: NoteApp
+name: ios-noteapp
 
 configs:
     Debug: debug
@@ -23,7 +23,7 @@ settings:
 PRODUCT_BUNDLE_IDENTIFIER: $(PRODUCT_BUNDLE_IDENTIFIER)
     
 targets: # The List of our targets
-  NoteApp:
+  ios-noteapp:
     type: application
     platform: iOS
     deploymentTarget: "14.0"
