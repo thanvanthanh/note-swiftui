@@ -1,0 +1,5 @@
+git_url("https://github.com/thanvanthanh/ios-certificates.git")
+git_branch("main")
+
+app_identifier(["vn.thanhthan.note-app"])
+username("thanh.than@sotatek.com")
