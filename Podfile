@@ -9,11 +9,9 @@ def shared_pods
 
 end
 
-target 'NoteApp' do
-  shared_pods
-
+target 'ios-noteapp' do
+ shared_pods
 end
-
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|

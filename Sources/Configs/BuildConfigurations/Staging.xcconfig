@@ -8,7 +8,7 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-#include "./Pods/Target Support Files/Pods-NoteApp/Pods-NoteApp.staging.xcconfig"
+#include "./Pods/Target Support Files/Pods-ios-noteapp/Pods-ios-noteapp.staging.xcconfig"
 
 APP_NAME = Note App
 PRODUCT_BUNDLE_IDENTIFIER = vn.thanhthan.note-app
