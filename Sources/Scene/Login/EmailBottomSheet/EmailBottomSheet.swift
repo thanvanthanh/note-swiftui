@@ -59,8 +59,10 @@ struct PickEmailItem: View {
     }
 }
 
+#if ENDPOINT_DEBUG
 struct EmailBottomSheet_Previews: PreviewProvider {
     static var previews: some View {
         EmailBottomSheet()
     }
 }
+#endif
