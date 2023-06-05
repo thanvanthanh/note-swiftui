@@ -11,7 +11,7 @@ import SwiftUI
 struct ios_noteappApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            LoginView(viewModel: .init())
         }
     }
 }
