@@ -75,9 +75,10 @@ struct LoginView: View {
 //        return max(265, context.maxDetentValue * 0.1)
 //    }
 //}
-
+#if ENDPOINT_DEBUG
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView(viewModel: .init())
     }
 }
+#endif
